@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot to Formal | Transform Gen Z Slang to Victorian Prose</title>
+    <meta name="description" content="Convert your skibidi sigma rizz brainrot slang into distinguished Victorian-era formal English">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.418.0/dist/lucide.min.js"></script>
+</head>
+<body>
+    <div class="app-bg"></div>
+    <div class="container">
+        <header>
+            <h1>
+                <span class="asterisk asterisk-left">*</span>
+                <span class="title-part brain">Brain</span>
+                <span class="title-part rot">rot</span>
+                <span class="title-part to"> to </span>
+                <span class="title-part formal">Formal</span>
+                <span class="asterisk asterisk-right">*</span>
+            </h1>
+            <p class="subtitle">
+                Transform your <strong class="inline-pink">skibidi sigma rizz</strong> into <em class="inline-formal">distinguished Victorian prose</em>
+            </p>
+            <div class="example-badges" aria-label="Example translation badges">
+                <span class="badge example-badge pink">no cap</span>
+                <span class="example-text">becomes</span>
+                <span class="badge example-badge indigo">I speak with utmost veracity</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="translator-component">
+                <div class="card input-card">
+                    <span class="floating-label input-label">BRAINROT INPUT</span>
+                    <textarea id="inputText" placeholder="no cap bro that skibidi rizz was lowkey bussin fr fr ong..." maxlength="1000" aria-label="Brainrot input"></textarea>
+                    <div class="input-footer">
+                        <button id="randomBtn" class="btn random-btn" type="button"><span data-lucide="shuffle" class="icon"></span>Random Example</button>
+                        <span id="charCount" class="char-count">0 / 1000</span>
+                    </div>
+                </div>
+
+                <div class="translate-wrapper">
+                    <button id="translateBtn" class="btn translate-btn" type="button"><span data-lucide="arrow-down" class="icon"></span><span class="btn-text">Make it Distinguished</span></button>
+                </div>
+
+                <div id="errorMsg" class="error-box hidden" role="alert"></div>
+
+                <div class="card output-card">
+                    <span class="floating-label output-label">FORMAL OUTPUT</span>
+                    <div id="outputText" class="output-box">Your distinguished translation shall appear here, dear colleague...</div>
+                    <div class="input-footer output-footer">
+                        <button id="copyBtn" class="btn copy-btn hidden" type="button"><span data-lucide="copy" class="icon"></span><span class="btn-text">Copy</span></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-card">
+                <span class="footer-text">Powered by <strong>Groq AI</strong> | <code>llama-3.1-8b-instant</code></span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
