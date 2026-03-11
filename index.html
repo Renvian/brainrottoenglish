@@ -65,6 +65,10 @@
     </div>
 
     <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+            lucide.createIcons();
+        }
+    </script>
 </body>
 </html>
