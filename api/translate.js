@@ -9,7 +9,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 // but this helps prevent rapid-fire clicks from one user)
 const rateLimitMap = new Map();
 
-export default async function handler(req, res) {
+async function handler(req, res) {
     // Only accept POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
@@ -100,3 +100,5 @@ Translate the brainrot into formal English. Be creative and dramatic. Only outpu
         res.status(500).json({ error: 'Failed to communicate with the professor (API Error)' });
     }
 }
+
+module.exports = handler;
