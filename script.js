@@ -45,7 +45,9 @@ translateBtn.addEventListener('click', async () => {
     translateBtn.disabled = true;
     if (translateBtnIcon) {
         translateBtnIcon.dataset.lucide = 'sparkles';
-        lucide.createIcons();
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+            lucide.createIcons();
+        }
     }
     if (translateBtnText) {
         translateBtnText.textContent = "Formalizing...";
@@ -83,7 +85,9 @@ translateBtn.addEventListener('click', async () => {
         translateBtn.disabled = false;
         if (translateBtnIcon) {
             translateBtnIcon.dataset.lucide = 'arrow-down';
-            lucide.createIcons();
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
         }
         if (translateBtnText) {
             translateBtnText.textContent = "Make it Distinguished";
@@ -98,7 +102,9 @@ copyBtn.addEventListener('click', async () => {
         const original = copyBtnText ? copyBtnText.textContent : copyBtn.textContent;
         if (copyBtnIcon) {
             copyBtnIcon.dataset.lucide = 'check';
-            lucide.createIcons();
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
         }
         if (copyBtnText) {
             copyBtnText.textContent = "Copied!";
@@ -106,7 +112,9 @@ copyBtn.addEventListener('click', async () => {
         setTimeout(() => {
             if (copyBtnIcon) {
                 copyBtnIcon.dataset.lucide = 'copy';
-                lucide.createIcons();
+                if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                    lucide.createIcons();
+                }
             }
             if (copyBtnText) {
                 copyBtnText.textContent = original;
@@ -121,4 +129,9 @@ copyBtn.addEventListener('click', async () => {
 function showError(msg) {
     errorMsg.textContent = msg;
     errorMsg.classList.remove('hidden');
+}
+
+// Initialize lucide icons when available
+if (typeof lucide !== 'undefined' && lucide.createIcons) {
+    lucide.createIcons();
 }
